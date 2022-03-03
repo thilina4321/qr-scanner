@@ -14,3 +14,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.section {
+  background-color: rgb(51, 50, 50);
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+  margin: auto;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  /* overflow: auto;
+  max-height: 100vh;
+  margin: 0; */
+
+}
