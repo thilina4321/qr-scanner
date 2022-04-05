@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -11,13 +11,17 @@ function createData(name, calories, fat) {
   return { name, calories, fat };
 }
 
-const rows = [
-  createData("Frozen yoghurt", 159, 6.0),
-  createData("Ice cream sandwich", 237, 9.0),
-  createData("Eclair", 262, 16.0),
-];
+export default function TableComponent(props) {
+  const { items } = props;
+  const [rows, setRows] = useState([]);
 
-export default function TableComponent() {
+  useEffect(() => {
+    setRows([]);
+    items.forEach(({ itemName, quantity, price }) => {
+      setRows((rows) => [...rows, createData(itemName, quantity, price)]);
+    });
+  }, [items]);
+
   return (
     <div style={{ width: "96%", margin: "10px auto" }}>
       <TableContainer component={Paper}>

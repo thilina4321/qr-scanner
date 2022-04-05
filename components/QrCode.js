@@ -1,10 +1,32 @@
 import Card from "@mui/material/Card";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
 
-const QrCodeGenerator = () => {
-  const a = { game: 1 };
-  const data = JSON.stringify(a);
+const QrCodeGenerator = (props) => {
+  const { items = [], shopName } = props;
+  const [qr, setqr] = useState(JSON.stringify({}));
+
+  useEffect(() => {
+    let total = 0;
+    const products = [];
+    items.forEach(({ itemName, quantity, price }) => {
+      products.push({
+        item: itemName,
+        price,
+        qty: quantity,
+      });
+      total += price * quantity;
+    });
+
+    setqr(
+      JSON.stringify({
+        storename: shopName,
+        products,
+        total,
+      })
+    );
+  }, [items, shopName]);
+
   return (
     <Card
       style={{
@@ -27,7 +49,7 @@ const QrCodeGenerator = () => {
       >
         QR Code
       </h1>
-      <QRCode value={data} />
+      <QRCode value={qr} />
     </Card>
   );
 };
