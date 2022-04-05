@@ -57,7 +57,7 @@ const FirstPage = () => {
             gap: "2rem",
             margin: "1rem",
             textAlign: "end",
-            justifyContent: "flex-end",
+            justifyContent: "flex-end"
           }}
         >
           <Button variant="outlined">Add</Button>
