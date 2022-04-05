@@ -1,0 +1,17 @@
+.bill{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.bill__data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+}
+
+.bill__data p{
+    flex: 1;
+}

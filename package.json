@@ -1,5 +1,5 @@
 {
-  "name": "audio-book",
+  "name": "qr-scanner",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,10 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.8.2",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.5.3",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tesseract.js": "^2.1.1"
+    "react-qr-code": "^2.0.5"
   },
   "devDependencies": {
     "eslint": "8.10.0",
