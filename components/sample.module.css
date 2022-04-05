@@ -7,11 +7,18 @@
 }
 .bill__data{
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 90%;
 }
 
 .bill__data p{
     flex: 1;
+}
+
+
+@media (max-width:500px) {
+    .bill__data{
+        flex-direction: column;
+    }
 }
