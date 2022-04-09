@@ -9,28 +9,8 @@ const SampleBill = (props) => {
   const date = new Date().toString();
 
   return (
-    <Card
-      style={{
-        padding: "2rem",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        width: "96%",
-        margin: "5px auto",
-        marginTop: "1rem",
-        marginBottom: "10rem",
-      }}
-    >
-      <h1
-        style={{
-          textAlign: "center",
-          backgroundColor: "rgb(0, 183, 255)",
-          padding: "0.5rem 5rem",
-        }}
-      >
-        Sample Bill
-      </h1>
+    <Card className={classes.smcard}>
+      <h1 className={classes.smh1}>Sample Bill</h1>
       <div className={classes.bill}>
         <div className={classes.bill__data}>
           <p>Shop Name : {shopName} </p>
