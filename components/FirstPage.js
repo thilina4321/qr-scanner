@@ -1,11 +1,11 @@
 import React, { Fragment, useState } from "react";
-import { useRouter } from "next/router";
 import InputComponent from "../UI/InputComponent";
 import TableComponent from "../UI/TableComponent";
 import Header from "./Header";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import SecondPage from "./SecondPage";
+import classes from "./first.module.css";
 
 const FirstPage = () => {
   const [shopName, setShopName] = useState("");
@@ -16,11 +16,8 @@ const FirstPage = () => {
   const [items, setItems] = useState([]);
   const [isFirst, setIsFirst] = useState(true);
 
-  const navigate = useRouter();
-
   const generateBill = () => {
     setIsFirst(false);
-    // navigate.push("/id");
   };
 
   const addItems = () => {
@@ -37,6 +34,7 @@ const FirstPage = () => {
 
   return (
     <section>
+      
       {isFirst && (
         <Fragment>
           <Header />
@@ -49,15 +47,7 @@ const FirstPage = () => {
           <TableComponent items={items} shopName={shopName} />
           <div style={{ height: "3rem" }}></div>
           <Card style={{ width: "96%", margin: "10px auto", padding: "1rem" }}>
-            <h1
-              style={{
-                textAlign: "center",
-                backgroundColor: "rgb(0, 183, 255)",
-                padding: "1rem",
-              }}
-            >
-              Add Item
-            </h1>
+            <h1 className={classes.cardh1}>Add Item</h1>
 
             <InputComponent
               label="Item Name"
@@ -77,15 +67,7 @@ const FirstPage = () => {
               type="number"
             />
             {error && <p style={{ color: "red" }}> {error} </p>}
-            <div
-              style={{
-                display: "flex",
-                gap: "2rem",
-                margin: "1rem",
-                textAlign: "end",
-                justifyContent: "flex-end",
-              }}
-            >
+            <div className={classes.btndiv}>
               <Button onClick={addItems} variant="outlined">
                 Add
               </Button>

@@ -1,6 +1,7 @@
 import Card from "@mui/material/Card";
 import React, { useEffect, useState } from "react";
 import QRCode from "react-qr-code";
+import classes from "./qr.module.css";
 
 const QrCodeGenerator = (props) => {
   const { items = [], shopName } = props;
@@ -28,27 +29,8 @@ const QrCodeGenerator = (props) => {
   }, [items, shopName]);
 
   return (
-    <Card
-      style={{
-        padding: "2rem",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-        width: "96%",
-        margin: "5px auto",
-        marginTop: "1rem",
-      }}
-    >
-      <h1
-        style={{
-          textAlign: "center",
-          backgroundColor: "rgb(0, 183, 255)",
-          padding: "0.5rem 5rem",
-        }}
-      >
-        QR Code
-      </h1>
+    <Card className={classes.qrcard}>
+      <h1 className={classes.qrh1}>QR Code</h1>
       <QRCode value={qr} />
     </Card>
   );

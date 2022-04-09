@@ -1,0 +1,13 @@
+.btndiv{
+    display: flex;
+    gap: 2rem;
+    margin: 1rem;
+    text-align: end;
+    justify-content: flex-end
+}
+
+.cardh1{
+    text-align: center;
+    background-color: rgb(0, 183, 255);
+    padding: 1rem;
+}
