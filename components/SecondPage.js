@@ -1,3 +1,5 @@
+import Button from "@mui/material/Button";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import QrCodeGenerator from "./QrCode";
@@ -20,7 +22,8 @@ const SecondPage = (props) => {
     <section>
       <Header />
       <QrCodeGenerator items={items} shopName={shopName} />
-      <SampleBill total={total} items={items} shopName={shopName} />
+      <SampleBill backNavigateHandler={props.backNavigateHandler} total={total} items={items} shopName={shopName} />
+      
     </section>
   );
 };

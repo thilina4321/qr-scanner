@@ -17,6 +17,15 @@ const FirstPage = () => {
   const [isFirst, setIsFirst] = useState(true);
 
   const generateBill = () => {
+    setError("");
+    if (items.length === 0) {
+      setError("*please add at least one item");
+      return;
+    }
+    if (!shopName) {
+      setError("*please enter shop name");
+      return;
+    }
     setIsFirst(false);
   };
 
@@ -32,9 +41,12 @@ const FirstPage = () => {
     setPrice("");
   };
 
+  const backNavigateHandler = () => {
+    setIsFirst(true);
+  };
+
   return (
     <section>
-      
       {isFirst && (
         <Fragment>
           <Header />
@@ -81,7 +93,11 @@ const FirstPage = () => {
 
       {!isFirst && (
         <Fragment>
-          <SecondPage shopName={shopName} items={items} />
+          <SecondPage
+            backNavigateHandler={backNavigateHandler}
+            shopName={shopName}
+            items={items}
+          />
         </Fragment>
       )}
     </section>

@@ -3,6 +3,7 @@ import React from "react";
 import TableComponent from "../UI/TableComponent";
 import classes from "./sample.module.css";
 import uuid from "react-uuid";
+import Button from "@mui/material/Button";
 
 const SampleBill = (props) => {
   const { items, shopName, total } = props;
@@ -25,6 +26,10 @@ const SampleBill = (props) => {
       <div style={{ textAlign: "end", width: "100%" }}>
         <h3> Total : {total} </h3>
       </div>
+
+      <Button onClick={props.backNavigateHandler} variant="outlined">
+        Go Back
+      </Button>
     </Card>
   );
 };
