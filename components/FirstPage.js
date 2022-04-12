@@ -50,11 +50,13 @@ const FirstPage = () => {
       {isFirst && (
         <Fragment>
           <Header />
-          <InputComponent
-            label="Shop Name"
-            value={shopName}
-            setValue={setShopName}
-          />
+          <div style={{ marginLeft: "10px" }}>
+            <InputComponent
+              label="Shop Name"
+              value={shopName}
+              setValue={setShopName}
+            />
+          </div>
           <div style={{ height: "2rem" }}></div>
           <TableComponent items={items} shopName={shopName} />
           <div style={{ height: "3rem" }}></div>
